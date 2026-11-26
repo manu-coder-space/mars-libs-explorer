@@ -113,8 +113,7 @@ Pages deployment is disabled while `ENABLE_PAGES` is absent or not `true`.
 After it is enabled, the update workflow deploys the same validated bundle it
 commits; it does not depend on a bot commit triggering another workflow.
 GitHub Free supports Pages from public repositories; Pages from private
-repositories requires an eligible plan. Existing private hosting and its
-separate ChatGPT daily task are not changed by this GitHub package.
+repositories requires an eligible plan. This GitHub deployment operates independently of any separately hosted instance.
 
 The app uses relative asset paths and works under a repository subpath. Both
 `index.html` and `mars-libs.html` open the explorer. See
