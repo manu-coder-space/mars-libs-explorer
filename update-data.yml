@@ -1,0 +1,285 @@
+name: Update Mars data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-data.yml'
+      - 'mars-upload-1.zip'
+      - 'mars-upload-2.zip'
+  schedule:
+    - cron: '0 8 * * *'
+      timezone: America/Toronto
+  workflow_dispatch:
+    inputs:
+      check_only:
+        description: Check sources without applying new science data
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mars-data-update
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    outputs:
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install validation and NASA rebuild dependencies
+        run: python -m pip install 'Pillow>=10' 'numpy>=1.24' 'scipy>=1.10'
+
+      # The owner uploads this workflow through GitHub's web interface.
+      # The import contains no .github files and never changes this workflow.
+      - name: Import and validate the phone upload if needed
+        id: import
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path, PurePosixPath
+          import shutil
+          import stat
+          import subprocess
+          import sys
+          import tempfile
+          import zipfile
+
+          root = Path.cwd()
+          archives = {
+              'mars-upload-1.zip': '467fb382bdc43b8f5bf9c22614afe37c834fa40092213b8cd9a6d5dd2c41977c',
+              'mars-upload-2.zip': '0c42a8cb427accce4ea3de299112046007c2c8b2d401302399f48e694610f5c7',
+          }
+          present = [name for name in archives if (root / name).exists()]
+          installed = (root / 'scripts/updates/run_github_daily.py').is_file()
+
+          def output(value):
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as handle:
+                  handle.write('imported=' + value + '\n')
+
+          if installed:
+              if present:
+                  raise SystemExit('The explorer is already installed. Refusing to overwrite it with upload archives. Remove the newly uploaded ZIPs through GitHub before running again.')
+              output('false')
+              print('The explorer is installed; continuing with its daily source check.')
+              sys.exit(0)
+          if len(present) != len(archives):
+              raise SystemExit('First setup requires both mars-upload-1.zip and mars-upload-2.zip at the repository root, with those exact filenames. Upload the missing file and run this workflow again.')
+
+          # Initial setup is allowed only in a new repository containing its
+          # optional GitHub-created README, the two packages and this workflow.
+          allowed_existing = {'README.md', '.github/workflows/update-data.yml', *archives}
+          tracked = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
+          unexpected = sorted(path for path in tracked if path and path not in allowed_existing)
+          if unexpected:
+              raise SystemExit('Initial setup would affect a repository with other files. Use a new repository. Unexpected tracked files: ' + ', '.join(unexpected[:12]))
+          allowed_existing_roots = {'.git', '.github', 'README.md', *archives}
+          if any(path.name not in allowed_existing_roots for path in root.iterdir()):
+              raise SystemExit('Initial setup found other local files. Refusing to overwrite an existing project.')
+          if not (root / '.github/workflows/update-data.yml').is_file():
+              raise SystemExit('Move the setup workflow to .github/workflows/update-data.yml before running it.')
+          if (root / 'README.md').is_symlink() or ((root / 'README.md').exists() and not (root / 'README.md').is_file()):
+              raise SystemExit('The existing README is not a regular file.')
+
+          allowed_roots = {
+              '.gitignore', 'CONTEXT_VALIDATION.json', 'DATA_SOURCES.md',
+              'LICENSE', 'PHONE_SETUP.md', 'QA.md', 'README.md',
+              'SCHEDULED_UPDATES.md', 'VALIDATION.json', 'data', 'dist',
+              'requirements.txt', 'scripts',
+          }
+          required = {
+              'README.md', 'PHONE_SETUP.md', '.gitignore',
+              'dist/index.html', 'dist/mars-libs.html', 'dist/app.js',
+              'dist/data/chemcam.json', 'dist/data/supercam.json',
+              'dist/data/update-status.json', 'data/update-state.json',
+              'scripts/updates/run_github_daily.py',
+              'scripts/updates/check_sources.py',
+              'scripts/validate_bundle.py', 'scripts/validate_context.py',
+              'scripts/check_chemistry.cjs',
+          }
+
+          # Validate both complete archives before inspecting or extracting any
+          # members. The expected digests bind this installer to this release.
+          for name, expected in archives.items():
+              path = root / name
+              if path.is_symlink() or not path.is_file():
+                  raise SystemExit('Upload archives must be regular files: ' + name)
+              actual = hashlib.sha256(path.read_bytes()).hexdigest()
+              if actual != expected:
+                  raise SystemExit('Upload checksum mismatch for ' + name + '. Download and upload the original file again.')
+
+          with tempfile.TemporaryDirectory(prefix='mars-phone-import-', dir=os.environ['RUNNER_TEMP']) as temporary:
+              stage = Path(temporary)
+              members = []
+              seen = set()
+              total = 0
+              for name in archives:
+                  with zipfile.ZipFile(root / name) as archive:
+                      for info in archive.infolist():
+                          raw = info.filename.rstrip('/') if info.is_dir() else info.filename
+                          path = PurePosixPath(raw)
+                          parts = raw.split('/')
+                          kind = stat.S_IFMT(info.external_attr >> 16)
+                          if ('\\' in raw or path.is_absolute() or not raw
+                                  or any(part in ('', '.', '..', '.git', '.github', '.openai') for part in parts)
+                                  or parts[0] not in allowed_roots
+                                  or kind not in (0, stat.S_IFREG, stat.S_IFDIR)
+                                  or info.flag_bits & 1):
+                              raise SystemExit('Unsafe or unexpected archive entry: ' + info.filename)
+                          if info.is_dir():
+                              continue
+                          if kind == stat.S_IFDIR or raw in seen:
+                              raise SystemExit('Duplicate or invalid archive entry: ' + raw)
+                          seen.add(raw)
+                          total += info.file_size
+                          if info.file_size > 100 * 1024 * 1024 or total > 400 * 1024 * 1024:
+                              raise SystemExit('The archive exceeds the expected project size.')
+                          members.append((name, raw))
+              missing = required - seen
+              if missing:
+                  raise SystemExit('The upload is missing required project files: ' + ', '.join(sorted(missing)))
+
+              for name in archives:
+                  with zipfile.ZipFile(root / name) as archive:
+                      for archive_name, relative in members:
+                          if archive_name != name:
+                              continue
+                          destination = stage / relative
+                          destination.parent.mkdir(parents=True, exist_ok=True)
+                          with archive.open(relative) as source, destination.open('xb') as target:
+                              shutil.copyfileobj(source, target)
+
+              for command in (
+                  [sys.executable, 'scripts/validate_bundle.py'],
+                  ['node', 'scripts/check_chemistry.cjs'],
+                  [sys.executable, 'scripts/validate_context.py'],
+              ):
+                  subprocess.run(command, cwd=stage, check=True)
+
+              # No checkout files are changed until all validators pass.
+              for relative in sorted(seen):
+                  destination = root / relative
+                  if destination.exists() and relative != 'README.md':
+                      raise SystemExit('Refusing to overwrite an existing file: ' + relative)
+              for relative in sorted(seen):
+                  destination = root / relative
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(stage / relative, destination)
+
+          output('true')
+          print('The complete phone upload passed validation and is ready to save.')
+          PY
+      - name: Save the validated initial project
+        if: steps.import.outputs.imported == 'true'
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- .gitignore CONTEXT_VALIDATION.json DATA_SOURCES.md LICENSE PHONE_SETUP.md QA.md README.md SCHEDULED_UPDATES.md VALIDATION.json data dist requirements.txt scripts
+          git rm -- mars-upload-1.zip mars-upload-2.zip
+          git commit -m 'Import the validated Mars LIBS Explorer phone upload'
+          git push origin "HEAD:refs/heads/$DEFAULT_BRANCH"
+          printf '%s\n' '## Phone upload installed' 'The complete validated project is saved in the repository. The temporary upload ZIPs were removed from the current branch. The live source check follows.' >> "$GITHUB_STEP_SUMMARY"
+
+      # Save the initial project before contacting external science archives.
+      # A source outage can fail the check without undoing the installed data.
+      - name: Check sources and stage validated updates
+        id: refresh
+        env:
+          CHECK_ONLY: ${{ inputs.check_only }}
+        run: |
+          options=()
+          if [[ "$CHECK_ONLY" == "true" ]]; then
+            options+=(--check-only)
+          fi
+          python scripts/updates/run_github_daily.py "${options[@]}" --github-output "$GITHUB_OUTPUT"
+      - name: Verify the complete candidate bundle
+        run: |
+          python scripts/validate_bundle.py
+          node scripts/check_chemistry.cjs
+          python scripts/validate_context.py
+      - name: Save the checked data and status
+        id: commit
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/update-state.json dist VALIDATION.json CONTEXT_VALIDATION.json
+          git add -- scripts/chemcam/source_manifest.json scripts/chemcam/qa_report.json scripts/supercam/source_manifest.json scripts/supercam/summary.json scripts/spectroscopy/verification.json
+          if [[ -f scripts/chemcam/sample_record.json ]]; then git add -- scripts/chemcam/sample_record.json; fi
+          if [[ -f scripts/chemcam/findings.txt ]]; then git add -- scripts/chemcam/findings.txt; fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update validated Mars data and source-check status'
+            git push origin "HEAD:refs/heads/$DEFAULT_BRANCH"
+          fi
+          printf 'commit_sha=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Retain the run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mars-source-check-${{ github.run_id }}
+          path: .cache/updates/latest.json
+          if-no-files-found: warn
+          include-hidden-files: true
+          retention-days: 30
+
+  # Publish only when the owner explicitly enables Pages. Bot commits do not
+  # trigger another push workflow, so deploy the exact validated commit here.
+  pages:
+    needs: refresh
+    if: vars.ENABLE_PAGES == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the validated commit
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.refresh.outputs.commit_sha }}
+      - name: Confirm the default branch still points to this release
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          expected=$(git rev-parse HEAD)
+          git fetch --depth=1 origin "$DEFAULT_BRANCH"
+          test "$expected" = "$(git rev-parse FETCH_HEAD)"
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload the static website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Deploy the validated release
+        id: deployment
+        uses: actions/deploy-pages@v4
