@@ -1,0 +1,12 @@
+# Optional rebuild dependencies for RMI derivatives and orbital/GIS geography.
+# The static website, ChemCam ingest, spectroscopy builder and Zhurong
+# spectroscopy importer need no third-party Python packages.
+Pillow>=10
+numpy>=1.24
+scipy>=1.10
+rasterio>=1.3
+shapely>=2
+pyproj>=3.5
+libarchive-c
+# The full geography rebuild includes Zhurong GIS and also needs system GDAL ogr2ogr.
+# See scripts/geography/README.md; ogr2ogr is not installed by this file.

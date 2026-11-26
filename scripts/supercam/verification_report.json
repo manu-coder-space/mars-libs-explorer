@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "check": "all source SHA-256 hashes match cached files",
+      "count": 16,
+      "passed": true
+    },
+    {
+      "check": "every unique point matches original chemistry, shot SD, total and distance; duplicates exact",
+      "count": 12121,
+      "passed": true
+    },
+    {
+      "check": "every location equals explicit PDS coordinate row and exact site/drive",
+      "count": 12121,
+      "passed": true
+    },
+    {
+      "check": "RMI pixel bounds, preserved image dimensions, exact observation joins",
+      "count": 21,
+      "passed": true
+    },
+    {
+      "check": "gzip lossless roundtrip",
+      "passed": true
+    }
+  ],
+  "data_json_bytes": 45970757,
+  "gzip_bytes": 2647333,
+  "traverse_positions": 35939,
+  "assets": {
+    "supercam-rmi-maaz-0012.jpg": 1159948,
+    "supercam-rmi-iina-0028.jpg": 2057612,
+    "supercam-rmi-tselhchee-0015.jpg": 2046128
+  },
+  "latitude_range": [
+    18.426506924,
+    18.499662754
+  ],
+  "longitude_range": [
+    77.218302498,
+    77.452587346
+  ]
+}

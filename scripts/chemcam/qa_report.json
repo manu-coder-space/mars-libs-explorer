@@ -1,0 +1,1428 @@
+{
+  "summary": {
+    "point_count": 31175,
+    "science_point_count": 30797,
+    "calibration_point_count": 378,
+    "min_sol": 13,
+    "max_sol": 4843,
+    "target_count": 4341,
+    "geolocated_science_point_count": 30722,
+    "geolocated_science_location_count": 1182,
+    "unlocated_science_point_count": 75,
+    "rmi_target_count": 10,
+    "rmi_point_count": 78,
+    "moc_file_count": 42,
+    "log_row_count": 123514,
+    "quality_flag_counts": {
+      "archive_saturation_note": 1423,
+      "rover_waypoint_exact_join_missing": 76,
+      "onboard_calibration_target": 378,
+      "archive_heterogeneity_note": 768,
+      "target_distance_above_3p5_m_review_distance_bias": 3399,
+      "outside_testset_minmax": 2053,
+      "oxide_total_outside_80_to_120_review": 1587,
+      "archive_ignore_note": 30,
+      "archive_continuum_note": 2
+    }
+  },
+  "source_file_count": 112,
+  "source_bytes_sha256_verified": true,
+  "moc_row_counts_match_labels": true,
+  "duplicate_product_ids": 0,
+  "duplicate_log_sclks": [],
+  "ambiguous_waypoint_keys": [],
+  "download_failures": [],
+  "rmi_failures": [],
+  "json_bytes": 55158884,
+  "moc_file_reports": [
+    {
+      "file": "moc_0000_0089.csv",
+      "rows": 334,
+      "declared_rows": 334,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0090_0179.csv",
+      "rows": 605,
+      "declared_rows": 605,
+      "product_version": "5",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0180_0269.csv",
+      "rows": 307,
+      "declared_rows": 307,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0270_0359.csv",
+      "rows": 911,
+      "declared_rows": 911,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0360_0449.csv",
+      "rows": 672,
+      "declared_rows": 672,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0450_0583.csv",
+      "rows": 628,
+      "declared_rows": 628,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0584_0707.csv",
+      "rows": 1049,
+      "declared_rows": 1049,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0708_0804.csv",
+      "rows": 949,
+      "declared_rows": 949,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0805_0938.csv",
+      "rows": 178,
+      "declared_rows": 178,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0010",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_0939_1062.csv",
+      "rows": 528,
+      "declared_rows": 528,
+      "product_version": "5",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0017",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1063_1159.csv",
+      "rows": 882,
+      "declared_rows": 882,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0011",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1160_1293.csv",
+      "rows": 787,
+      "declared_rows": 787,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0012",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1294_1417.csv",
+      "rows": 1288,
+      "declared_rows": 1288,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0013",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1418_1514.csv",
+      "rows": 1100,
+      "declared_rows": 1100,
+      "product_version": "5",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0014",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1515_1648.csv",
+      "rows": 1290,
+      "declared_rows": 1290,
+      "product_version": "5",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0015",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1649_1772.csv",
+      "rows": 1418,
+      "declared_rows": 1418,
+      "product_version": "5",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0016",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1773_1869.csv",
+      "rows": 685,
+      "declared_rows": 685,
+      "product_version": "5",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0017",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_1870_2003.csv",
+      "rows": 1270,
+      "declared_rows": 1270,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0018",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2004_2127.csv",
+      "rows": 1388,
+      "declared_rows": 1388,
+      "product_version": "5",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0019",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2128_2224.csv",
+      "rows": 626,
+      "declared_rows": 626,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0020",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2225_2358.csv",
+      "rows": 1100,
+      "declared_rows": 1100,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0021",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2359_2482.csv",
+      "rows": 1317,
+      "declared_rows": 1317,
+      "product_version": "4",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0022",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2483_2579.csv",
+      "rows": 670,
+      "declared_rows": 670,
+      "product_version": "2",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0023",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2580_2713.csv",
+      "rows": 1435,
+      "declared_rows": 1435,
+      "product_version": "2",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0024",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2714_2837.csv",
+      "rows": 1471,
+      "declared_rows": 1471,
+      "product_version": "2",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0025",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2838_2934.csv",
+      "rows": 918,
+      "declared_rows": 918,
+      "product_version": "2",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0026",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_2935_3068.csv",
+      "rows": 904,
+      "declared_rows": 904,
+      "product_version": "2",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0027",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3069_3192.csv",
+      "rows": 255,
+      "declared_rows": 255,
+      "product_version": "2",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0028",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3193_3289.csv",
+      "rows": 272,
+      "declared_rows": 272,
+      "product_version": "1",
+      "product_creation_time": "2022-02-08T14:52:00",
+      "release_id": "0029",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3290_3423.csv",
+      "rows": 556,
+      "declared_rows": 556,
+      "product_version": "1",
+      "product_creation_time": "2022-06-20T14:52:00",
+      "release_id": "0030",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3424_3547.csv",
+      "rows": 425,
+      "declared_rows": 425,
+      "product_version": "1",
+      "product_creation_time": "2022-10-20T14:52:00",
+      "release_id": "0031",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3548_3644.csv",
+      "rows": 411,
+      "declared_rows": 411,
+      "product_version": "1",
+      "product_creation_time": "2023-02-07T14:52:00",
+      "release_id": "0032",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3645_3778.csv",
+      "rows": 525,
+      "declared_rows": 525,
+      "product_version": "1",
+      "product_creation_time": "2023-06-14T14:52:00",
+      "release_id": "0033",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3779_3902.csv",
+      "rows": 513,
+      "declared_rows": 513,
+      "product_version": "1",
+      "product_creation_time": "2023-10-18T14:52:00",
+      "release_id": "0034",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_3903_3999.csv",
+      "rows": 427,
+      "declared_rows": 427,
+      "product_version": "1",
+      "product_creation_time": "2024-02-08T14:52:00",
+      "release_id": "0035",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_4000_4133.csv",
+      "rows": 429,
+      "declared_rows": 429,
+      "product_version": "1",
+      "product_creation_time": "2024-06-20T14:52:00",
+      "release_id": "0036",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_4134_4257.csv",
+      "rows": 464,
+      "declared_rows": 464,
+      "product_version": "1",
+      "product_creation_time": "2024-10-30T09:41:00",
+      "release_id": "0037",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_4258_4354.csv",
+      "rows": 446,
+      "declared_rows": 446,
+      "product_version": "1",
+      "product_creation_time": "2025-02-19T09:41:00",
+      "release_id": "0038",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_4355_4488.csv",
+      "rows": 514,
+      "declared_rows": 514,
+      "product_version": "1",
+      "product_creation_time": "2025-06-17T09:41:00",
+      "release_id": "0039",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_4489_4612.csv",
+      "rows": 511,
+      "declared_rows": 511,
+      "product_version": "1",
+      "product_creation_time": "2025-10-22T09:41:00",
+      "release_id": "0040",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_4613_4709.csv",
+      "rows": 406,
+      "declared_rows": 406,
+      "product_version": "1",
+      "product_creation_time": "2026-05-22T09:41:00",
+      "release_id": "0041",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    },
+    {
+      "file": "moc_4710_4843.csv",
+      "rows": 311,
+      "declared_rows": 311,
+      "product_version": "1",
+      "product_creation_time": "2026-06-17T09:41:00",
+      "release_id": "0042",
+      "calibration_header": "sPDL Tool v2.5 (Last edited 5 January 2021)",
+      "testset_ranges": {
+        "Min": {
+          "SiO2": 0.11,
+          "TiO2": 0.0,
+          "Al2O3": 0.02,
+          "FeOT": 0.0179962,
+          "MgO": 0.01,
+          "CaO": 0.01,
+          "Na2O": 0.0,
+          "K2O": 0.0,
+          "MnO": 0.003
+        },
+        "Max": {
+          "SiO2": 84.9,
+          "TiO2": 3.575,
+          "Al2O3": 32.1395,
+          "FeOT": 49.0576,
+          "MgO": 45.9258,
+          "CaO": 35.67,
+          "Na2O": 6.77789,
+          "K2O": 8.88,
+          "MnO": 125.8
+        }
+      }
+    }
+  ],
+  "representative_checks_passed": true,
+  "unlocated_science_retained_in_points": 75,
+  "rmi_coordinates_within_original_image_bounds": true
+}

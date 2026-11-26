@@ -1,0 +1,88 @@
+{
+  "checked_date": "2026-11-16",
+  "sources": [
+    {
+      "id": "luo_s1",
+      "title": "Data Set S1.xlsx",
+      "url": "https://zenodo.org/api/records/8402478/files/Data%20Set%20S1.xlsx/content",
+      "record_url": "https://zenodo.org/records/8402478",
+      "doi": "10.5281/zenodo.8402478",
+      "license": "CC BY 4.0",
+      "local_path": "data/zhurong_sources/luo_s1.xlsx",
+      "md5": "8786a2025e733702f1a80bce6b9912ae",
+      "sha256": "f430d99ab1b5a8f7c24a599770e5d46dc08caf3f3d5d0707e065a697b8023b81",
+      "bytes": 12533
+    },
+    {
+      "id": "luo_s2",
+      "title": "Data Set S2.xlsx",
+      "url": "https://zenodo.org/api/records/8402478/files/Data%20Set%20S2.xlsx/content",
+      "record_url": "https://zenodo.org/records/8402478",
+      "doi": "10.5281/zenodo.8402478",
+      "license": "CC BY 4.0",
+      "local_path": "data/zhurong_sources/luo_s2.xlsx",
+      "md5": "f311edfbb6c6427a41d72c46021cbfe2",
+      "sha256": "12f721154e60a772b459b9942625009b60405b11648987949d4a9e88c1602790",
+      "bytes": 10545
+    },
+    {
+      "id": "luo_s3",
+      "title": "Data Set S3.xlsx",
+      "url": "https://zenodo.org/api/records/8402478/files/Data%20Set%20S3.xlsx/content",
+      "record_url": "https://zenodo.org/records/8402478",
+      "doi": "10.5281/zenodo.8402478",
+      "license": "CC BY 4.0",
+      "local_path": "data/zhurong_sources/luo_s3.xlsx",
+      "md5": "5fb85d2349dbb1c513644bde36518894",
+      "sha256": "9e79810994ce8840646388b4b3f2b191f191c37e5c8637e710fab2ddb0682c5f",
+      "bytes": 9729
+    },
+    {
+      "id": "zhang_volatiles_s1",
+      "title": "Supplemental data 1.xlsx",
+      "url": "https://zenodo.org/api/records/11480713/files/Supplemental%20data%201.xlsx/content",
+      "record_url": "https://zenodo.org/records/11480713",
+      "doi": "10.5281/zenodo.11480713",
+      "license": "CC BY 4.0",
+      "local_path": "data/zhurong_sources/zhang_volatiles_s1.xlsx",
+      "md5": "b68c49a48045f43fecc601dd40961c34",
+      "sha256": "7208b3b1febf6a8a1084f58c80507570272bb91248d244e434f0344acf9839c1",
+      "bytes": 12742
+    },
+    {
+      "id": "zhang_volatiles_s2",
+      "title": "Supplemental data 2.xlsx",
+      "url": "https://zenodo.org/api/records/11480713/files/Supplemental%20data%202.xlsx/content",
+      "record_url": "https://zenodo.org/records/11480713",
+      "doi": "10.5281/zenodo.11480713",
+      "license": "CC BY 4.0",
+      "local_path": "data/zhurong_sources/zhang_volatiles_s2.xlsx",
+      "md5": "e8e61eaa7170c61862d5f7b1c7cd07ce",
+      "sha256": "d1b583603094ca0ab4565e7fa17aa140de0293f6d14f43b32d228c1aa1a83be4",
+      "bytes": 9139
+    },
+    {
+      "id": "zhang_swir",
+      "title": "SWIR.zip",
+      "url": "https://zenodo.org/api/records/16809501/files/SWIR.zip/content",
+      "record_url": "https://zenodo.org/records/16809501",
+      "doi": "10.5281/zenodo.16809501",
+      "license": "CC BY 4.0",
+      "local_path": "data/zhurong_sources/zhang_swir.zip",
+      "md5": "4226796e93886b3bcb0c6199351b20a3",
+      "sha256": "75aaf5bfa0d2f776501842cdf4fb05114a842e74ebe3b95841b9e9df9bfc3e9f",
+      "bytes": 11653
+    }
+  ],
+  "summary": {
+    "libs_tables": 5,
+    "libs_table_rows": 90,
+    "luo_unique_target_labels": 32,
+    "volatile_target_rows": 29,
+    "swir_spectra": 30,
+    "swir_wavelengths": 309,
+    "located_measurements": 0,
+    "major_oxide_measurements": 0,
+    "count_note": "Rows in different publications/tables may describe the same target; counts are not additive unique observations."
+  }
+}

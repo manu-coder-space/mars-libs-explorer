@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+.DS_Store
+scripts/chemcam/raw/
+scripts/supercam/raw/
+scripts/chemcam/data.json
+scripts/supercam/data.json
+scripts/chemcam/moc_index.txt
+scripts/chemcam/extras_index.txt
+scripts/chemcam/moc_first.txt
+scripts/supercam/places/
+*.tar.gz
+.sites-runtime/
+
+exports/
+.cache/
+scripts/spectroscopy/raw/
+dist/server/
+dist/.openai/
+
+# Local access and temporary build files
+.env
+.env.*
+!.env.example
+.github-import/

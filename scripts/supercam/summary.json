@@ -1,0 +1,32 @@
+{
+  "source_rows": 12130,
+  "exact_duplicate_source_rows_collapsed": 9,
+  "points": 12121,
+  "science_points": 11600,
+  "calibration_points": 521,
+  "geolocated_points": 12121,
+  "geolocated_science_points": 11600,
+  "target_sequences": 1352,
+  "sol_min": 12,
+  "sol_max": 1859,
+  "rmi_targets": 3,
+  "rmi_points_with_composition": 20,
+  "rmi_annotation_points": 21,
+  "metadata_joins": {
+    "exact_sol_sequence_sclk_fraction_point; target_filename_alias": 10,
+    "exact_normalized_cdr_product_id": 12111
+  },
+  "location_sources": {
+    "places_telemetry": 3194,
+    "places_best_interp": 8927
+  },
+  "quality_flag_counts": {
+    "oxide_total_outside_80_120_review_band": 1206,
+    "calibration_target": 521,
+    "archive_comment": 1649,
+    "outside_training_range": 3902,
+    "archive_saturation_flag": 76,
+    "archive_delivery_status_conflict": 6
+  },
+  "max_absolute_total_sum_difference_wt_pct": 1.4210854715202004e-14
+}

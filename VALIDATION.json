@@ -1,0 +1,43 @@
+[
+  {
+    "mission": "chemcam",
+    "measurements": 31175,
+    "science_measurements": 30797,
+    "calibration_measurements": 378,
+    "geolocated_science_measurements": 30722,
+    "sol_min": 13,
+    "sol_max": 4843,
+    "rmi_images": 10,
+    "rmi_matched_spots": 78,
+    "rmi_unmatched_spots": 0,
+    "traverse_points": 1389,
+    "traverse_chunk_sha256": {
+      "data/chemcam/traverse-001.json": "5d7321b5c60b4940f88311a436252f945fa16013d40fa2c7bff61744188cc8c8"
+    },
+    "checks": "passed"
+  },
+  {
+    "mission": "supercam",
+    "measurements": 12121,
+    "science_measurements": 11600,
+    "calibration_measurements": 521,
+    "geolocated_science_measurements": 11600,
+    "sol_min": 12,
+    "sol_max": 1859,
+    "rmi_images": 3,
+    "rmi_matched_spots": 20,
+    "rmi_unmatched_spots": 1,
+    "traverse_points": 35939,
+    "traverse_chunk_sha256": {
+      "data/supercam/traverse-001.json": "160c4eb9e3b2c86830cdb2cf3a18be54809463c9a5a5a6d9342d44fae324dc02",
+      "data/supercam/traverse-002.json": "8f4bdb36bb142bad2e8277b50f920ebc6ee623a04cf7c9b786fec7f36243e3df",
+      "data/supercam/traverse-003.json": "535536786ee3c4833616c0b64bf11ef38b3b8fd965903c50d472bd10673d9d6a",
+      "data/supercam/traverse-004.json": "cc260ccbcb7d37357fec7c9668041fab9d75f1a55f80c8f3a639bcb1d47eb548",
+      "data/supercam/traverse-005.json": "a1a9dd4cd8afaad8a19aa6e853966dd3fe4683bb9aadaefe5812418d349c9de4",
+      "data/supercam/traverse-006.json": "b9f4e7d352f0fa1212b85fa95e482bfb981992c340b8073ec71a0f124df2532c",
+      "data/supercam/traverse-007.json": "0f43cdccfd888f87be3320c04198d0a166a6d9bf522d0889468da1429f7ff33a",
+      "data/supercam/traverse-008.json": "6fbfe13edc71fe1b25676a3876f18ba2a0a18b46e14a1353eb67371776d98ed4"
+    },
+    "checks": "passed"
+  }
+]

@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "description": "Daily source monitoring configuration. NASA current published fingerprints are read from dist/data/{mission}.json; raw acquisition changes and reviewed scientific interpretations remain separate.",
+  "chemcam_inventory_url": "https://pds-geosciences.wustl.edu/msl/msl-m-chemcam-libs-4_5-rdr-v1/mslccm_1xxx/data/moc/",
+  "sources": [
+    {
+      "id": "supercam_release_notes",
+      "group": "supercam",
+      "kind": "text",
+      "action": "automatic_nasa",
+      "essential": false,
+      "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_supercam/document/mars2020_supercam_release_notes.txt"
+    },
+    {
+      "id": "perseverance_waypoints",
+      "group": "geography",
+      "kind": "waypoints",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_waypoints.json",
+      "note": "PLACES is the chemistry/Raman localization source; this independent traverse feed is a context monitor."
+    },
+    {
+      "id": "sherloc_processed_inventory",
+      "group": "spectroscopy",
+      "kind": "sol_inventory",
+      "action": "review_evidence",
+      "essential": false,
+      "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sherloc/data_processed/",
+      "note": "New product directories indicate archive availability, not organic or mineral detections."
+    },
+    {
+      "id": "zhurong_luo_libs",
+      "group": "zhurong",
+      "kind": "zenodo",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://zenodo.org/api/records/8402478/versions/latest",
+      "expected": {
+        "id": "8402478",
+        "files": [
+          {
+            "key": "Data Set S1.xlsx",
+            "checksum": "md5:8786a2025e733702f1a80bce6b9912ae",
+            "size": 12533
+          },
+          {
+            "key": "Data Set S2.xlsx",
+            "checksum": "md5:f311edfbb6c6427a41d72c46021cbfe2",
+            "size": 10545
+          },
+          {
+            "key": "Data Set S3.xlsx",
+            "checksum": "md5:5fb85d2349dbb1c513644bde36518894",
+            "size": 9729
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhurong_zhang_volatiles",
+      "group": "zhurong",
+      "kind": "zenodo",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://zenodo.org/api/records/11480713/versions/latest",
+      "expected": {
+        "id": "11480713",
+        "files": [
+          {
+            "key": "Supplemental data 1.xlsx",
+            "checksum": "md5:b68c49a48045f43fecc601dd40961c34",
+            "size": 12742
+          },
+          {
+            "key": "Supplemental data 2.xlsx",
+            "checksum": "md5:e8e61eaa7170c61862d5f7b1c7cd07ce",
+            "size": 9139
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhurong_zhang_swir",
+      "group": "zhurong",
+      "kind": "zenodo",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://zenodo.org/api/records/16809501/versions/latest",
+      "expected": {
+        "id": "16809501",
+        "files": [
+          {
+            "key": "MSCam.zip",
+            "checksum": "md5:114718169d3d9b72e26fd04c4452e137",
+            "size": 78179
+          },
+          {
+            "key": "SWIR.zip",
+            "checksum": "md5:4226796e93886b3bcb0c6199351b20a3",
+            "size": 11653
+          }
+        ]
+      }
+    },
+    {
+      "id": "glen_torridon_map",
+      "group": "geography",
+      "kind": "zenodo",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://zenodo.org/api/records/7041712/versions/latest",
+      "expected": {
+        "id": "7041712",
+        "files": [
+          {
+            "key": "Fedo_et_al_JGR-P_2022_Glen_Torridon_Gale_Mars.jpeg",
+            "checksum": "md5:3680ecae18020dc367c95151370411b1",
+            "size": 1441303
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhurong_regional_geology",
+      "group": "geography",
+      "kind": "zenodo",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://zenodo.org/api/records/13341513/versions/latest",
+      "expected": {
+        "id": "13341513",
+        "files": [
+          {
+            "key": "Southern_Utopia_Zhurong.rar",
+            "checksum": "md5:74d15dbb136b41256f754225b19ceb76",
+            "size": 73918079
+          }
+        ]
+      }
+    },
+    {
+      "id": "gale_hirise_color_cog",
+      "group": "geography",
+      "kind": "head",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mars/MSL/MSL_Gale_HiRISE-LRGB_78quads_sharp_cog.tif",
+      "note": "Metadata check only; never download the roughly 1 GB TIFF during daily monitoring. ETag is an object validator, not assumed to be a content MD5."
+    },
+    {
+      "id": "jezero_geology_service",
+      "group": "geography",
+      "kind": "arcgis_metadata",
+      "action": "review_context",
+      "essential": false,
+      "url": "https://services.arcgis.com/v01gqwM5QqNysAAi/arcgis/rest/services/Jezero_FeatureServiceFromPro/FeatureServer/8?f=pjson",
+      "verified_native_spatial_reference": {
+        "wkt": "PROJCS[\"MTM_clon77_5E\",GEOGCS[\"GCS_Mars_2000_Sphere\",DATUM[\"D_Mars_2000_Sphere\",SPHEROID[\"Mars_2000_Sphere\",3396190.0,0.0]],PRIMEM[\"Reference_Meridian\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"False_Easting\",0.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",77.5],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0]]"
+      },
+      "note": "Native Mars 2000 sphere transverse Mercator, central meridian 77.5 E. The geography builder explicitly requests outSR=104971 and verifies the returned Mars geographic reference. Native projected bounds are not geographic degrees."
+    }
+  ],
+  "interpretation_review": {
+    "automatic_classification": false,
+    "note": "The source checker tracks public archive and dataset versions. New literature requires a separate primary-source search and evidence review before any mineral or organic label is added. A source outage never means absence of detections.",
+    "topics": [
+      "SuperCam Raman mineral detections",
+      "SHERLOC Raman and ultraviolet luminescence interpretations",
+      "Curiosity SAM organic chemistry",
+      "Zhurong MarSCoDe LIBS and SWIR author datasets"
+    ],
+    "registration_required_source": "https://clpds.bao.ac.cn/web/enmanager/mars1"
+  }
+}

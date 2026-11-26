@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "geographic_images": 7,
+  "curated_evidence": 18,
+  "raman_observation_groups": 166,
+  "raman_product_records": 1285,
+  "raman_unlocated_groups": 0,
+  "zhurong_libs_tables": 5,
+  "zhurong_table_rows": 90,
+  "zhurong_swir_spectra": 30,
+  "zhurong_swir_wavelengths": 309,
+  "zhurong_fabricated_locations": 0,
+  "html_ids": 129,
+  "imagery_coverage": {
+    "chemcam": {
+      "science_points": 30797,
+      "unlocated_science_points": 75,
+      "geolocated_science_points": 30722,
+      "inside_imagery_bounds": 30722,
+      "outside_imagery_bounds": 0,
+      "outside_examples": []
+    },
+    "supercam": {
+      "science_points": 11600,
+      "unlocated_science_points": 0,
+      "geolocated_science_points": 11600,
+      "inside_imagery_bounds": 11600,
+      "outside_imagery_bounds": 0,
+      "outside_examples": []
+    }
+  },
+  "warnings": [],
+  "notes": [
+    "Raman counts are checked against current archive metadata rather than a frozen release.",
+    "Imagery coverage uses raster bounds, not per-pixel valid-data masks; grayscale regional context backs transparent detail tiles.",
+    "Scientific ratio endmembers checked separately with node scripts/check_chemistry.cjs",
+    "Independent source-row/checksum validations retained under scripts/geography, scripts/spectroscopy and scripts/zhurong."
+  ]
+}
