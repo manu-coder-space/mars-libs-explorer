@@ -29,8 +29,7 @@ The workflow needs permission to write repository contents. Use the built-in
 Organization policy or branch protection can block a push. A rejected push
 fails safely; the workflow never force-pushes or overrides branch protection.
 
-The existing ChatGPT-hosted explorer has its own separate task. Uploading this
-repository does not disable or change that task.
+This repository's scheduled workflow operates independently of any separately hosted instance.
 
 ## What a run does
 
