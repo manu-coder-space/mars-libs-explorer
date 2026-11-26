@@ -5,8 +5,11 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/update-data.yml'
-      - 'mars-upload-1.zip'
-      - 'mars-upload-2.zip'
+      - 'mars-part-01.zip'
+      - 'mars-part-02.zip'
+      - 'mars-part-03.zip'
+      - 'mars-part-04.zip'
+      - 'mars-part-05.zip'
   schedule:
     - cron: '0 8 * * *'
       timezone: America/Toronto
@@ -67,10 +70,20 @@ jobs:
 
           root = Path.cwd()
           archives = {
+              'mars-part-01.zip': '29441bf44455e3257e5e0da376ada31970c22a8e495187a2a870f28ebec06953',
+              'mars-part-02.zip': 'eb0bf5817d10fc92e08d61108266d9e861331eeedb1bb384e30387524a6e304f',
+              'mars-part-03.zip': 'c95e10538bbb5130a01344884be4ddd97326b138373a1778394c83f5a5bf6a6d',
+              'mars-part-04.zip': '79572fbbf1ed86f71a93976a4256cac0c8fae5d825f5d047da99d600c0479681',
+              'mars-part-05.zip': '8f6a62440805d4bcdf86d2e9a2f3ac67f3af4cb1db27ad5e35e1428fd2720463',
+          }
+          # Earlier upload files may already have been committed. Recognize
+          # only their original exact bytes; they are never used for extraction.
+          legacy_archives = {
               'mars-upload-1.zip': '467fb382bdc43b8f5bf9c22614afe37c834fa40092213b8cd9a6d5dd2c41977c',
               'mars-upload-2.zip': '0c42a8cb427accce4ea3de299112046007c2c8b2d401302399f48e694610f5c7',
           }
-          present = [name for name in archives if (root / name).exists()]
+          present = [name for name in archives if (root / name).exists() or (root / name).is_symlink()]
+          legacy_present = [name for name in legacy_archives if (root / name).exists() or (root / name).is_symlink()]
           installed = (root / 'scripts/updates/run_github_daily.py').is_file()
 
           def output(value):
@@ -78,22 +91,27 @@ jobs:
                   handle.write('imported=' + value + '\n')
 
           if installed:
-              if present:
+              if present or legacy_present:
                   raise SystemExit('The explorer is already installed. Refusing to overwrite it with upload archives. Remove the newly uploaded ZIPs through GitHub before running again.')
               output('false')
               print('The explorer is installed; continuing with its daily source check.')
               sys.exit(0)
           if len(present) != len(archives):
-              raise SystemExit('First setup requires both mars-upload-1.zip and mars-upload-2.zip at the repository root, with those exact filenames. Upload the missing file and run this workflow again.')
+              missing_uploads = sorted(set(archives) - set(present))
+              raise SystemExit('First setup requires all five small ZIPs at the repository root. Upload and commit each missing file, then run this workflow again: ' + ', '.join(missing_uploads))
 
           # Initial setup is allowed only in a new repository containing its
-          # optional GitHub-created README, the two packages and this workflow.
-          allowed_existing = {'README.md', '.github/workflows/update-data.yml', *archives}
+          # optional GitHub-created README, the five packages, verified earlier
+          # upload files, and this workflow. A duplicate root YAML is rejected.
+          allowed_existing = {'README.md', '.github/workflows/update-data.yml', *archives, *legacy_archives}
           tracked = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
           unexpected = sorted(path for path in tracked if path and path not in allowed_existing)
           if unexpected:
               raise SystemExit('Initial setup would affect a repository with other files. Use a new repository. Unexpected tracked files: ' + ', '.join(unexpected[:12]))
-          allowed_existing_roots = {'.git', '.github', 'README.md', *archives}
+          required_tracked = set(present) | set(legacy_present)
+          if required_tracked - set(tracked):
+              raise SystemExit('Upload ZIPs must be committed to the repository before installation.')
+          allowed_existing_roots = {'.git', '.github', 'README.md', *archives, *legacy_archives}
           if any(path.name not in allowed_existing_roots for path in root.iterdir()):
               raise SystemExit('Initial setup found other local files. Refusing to overwrite an existing project.')
           if not (root / '.github/workflows/update-data.yml').is_file():
@@ -118,9 +136,11 @@ jobs:
               'scripts/check_chemistry.cjs',
           }
 
-          # Validate both complete archives before inspecting or extracting any
+          # Validate all five complete archives and any earlier upload files
+          # before inspecting or extracting any
           # members. The expected digests bind this installer to this release.
-          for name, expected in archives.items():
+          verified_uploads = {**archives, **{name: legacy_archives[name] for name in legacy_present}}
+          for name, expected in verified_uploads.items():
               path = root / name
               if path.is_symlink() or not path.is_file():
                   raise SystemExit('Upload archives must be regular files: ' + name)
@@ -197,10 +217,15 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- .gitignore CONTEXT_VALIDATION.json DATA_SOURCES.md LICENSE PHONE_SETUP.md QA.md README.md SCHEDULED_UPDATES.md VALIDATION.json data dist requirements.txt scripts
-          git rm -- mars-upload-1.zip mars-upload-2.zip
-          git commit -m 'Import the validated Mars LIBS Explorer phone upload'
+          git rm -- mars-part-01.zip mars-part-02.zip mars-part-03.zip mars-part-04.zip mars-part-05.zip
+          for name in mars-upload-1.zip mars-upload-2.zip; do
+            if git ls-files --error-unmatch -- "$name" >/dev/null 2>&1; then
+              git rm -- "$name"
+            fi
+          done
+          git commit -m 'Import the validated Mars LIBS Explorer small upload packages'
           git push origin "HEAD:refs/heads/$DEFAULT_BRANCH"
-          printf '%s\n' '## Phone upload installed' 'The complete validated project is saved in the repository. The temporary upload ZIPs were removed from the current branch. The live source check follows.' >> "$GITHUB_STEP_SUMMARY"
+          printf '%s\n' '## Phone upload installed' 'The complete validated project is saved in the repository. The five temporary ZIPs and any verified earlier upload ZIPs were removed from the current branch. The live source check follows.' >> "$GITHUB_STEP_SUMMARY"
 
       # Save the initial project before contacting external science archives.
       # A source outage can fail the check without undoing the installed data.
