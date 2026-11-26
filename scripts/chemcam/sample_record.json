@@ -1,0 +1,90 @@
+{
+  "id": "CL5_399178818CCS_F0030078CCAM01019P3",
+  "mission": "Curiosity",
+  "instrument": "ChemCam",
+  "sol": 19,
+  "sequence": "ccam01019",
+  "point": 1,
+  "point_index_kind": "rmi_annotation",
+  "target": "Mara_1",
+  "sclk": 399178818,
+  "site": 3,
+  "drive": 78,
+  "pose": 6,
+  "distance_m": 3.10065,
+  "target_type": "Rock",
+  "is_calibration": false,
+  "calibration_evidence": [],
+  "oxides": {
+    "SiO2": 51.5,
+    "TiO2": 0.82,
+    "Al2O3": 17.4,
+    "FeOT": 12.9,
+    "MgO": 1.5,
+    "CaO": 8.4,
+    "Na2O": 5.52,
+    "K2O": 0.95,
+    "MnO": 0.11
+  },
+  "uncertainty": {
+    "rmsep": {
+      "SiO2": 5.0,
+      "TiO2": 0.45,
+      "Al2O3": 3.7,
+      "FeOT": 3.1,
+      "MgO": 1.5,
+      "CaO": 2.6,
+      "Na2O": 0.92,
+      "K2O": 0.85,
+      "MnO": 0.05
+    },
+    "shot_sd": {
+      "SiO2": 0.5,
+      "TiO2": 0.02,
+      "Al2O3": 0.3,
+      "FeOT": 0.5,
+      "MgO": 0.1,
+      "CaO": 0.2,
+      "Na2O": 0.18,
+      "K2O": 0.08,
+      "MnO": 0.01
+    }
+  },
+  "total_wt_pct": 99.16,
+  "spectrum_total": 637000000000000.0,
+  "quality_flags": [],
+  "quality_notes": {},
+  "outside_testset_oxides": [],
+  "location": {
+    "lat": -4.589465,
+    "lon": 137.441734,
+    "elevation_m": -4501.12,
+    "kind": "rover_position_proxy",
+    "source": "MSL_waypoints.json",
+    "source_feature_index": 2,
+    "site": 3,
+    "drive": 78,
+    "sol": 16,
+    "dist_total_m": 7.01,
+    "easting_m": 8146817.21,
+    "northing_m": null,
+    "latitude_convention": "unspecified_by_source",
+    "longitude_convention": "east_positive",
+    "elevation_reference": "source_elev_geoid"
+  },
+  "rmi": [
+    "0019_crm_ccam01019_mara_1"
+  ],
+  "source_id": "moc_0000_0089.csv",
+  "source_row": 14,
+  "log_source_row": 114,
+  "spectrum_url": "https://pds-geosciences.wustl.edu/msl/msl-m-chemcam-libs-4_5-rdr-v1/mslccm_1xxx/data/sol00019/cl5_399178818ccs_f0030078ccam01019p3.csv",
+  "spectrum_label_url": "https://pds-geosciences.wustl.edu/msl/msl-m-chemcam-libs-4_5-rdr-v1/mslccm_1xxx/data/sol00019/cl5_399178818ccs_f0030078ccam01019p3.lbl",
+  "observing": {
+    "pattern": "1x5 Raster",
+    "n_shots_commanded": 50,
+    "rsm_az_rad": 2.782,
+    "rsm_el_rad": 0.894,
+    "comments": null
+  }
+}

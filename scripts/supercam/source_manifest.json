@@ -5,7 +5,10 @@
     "file": "raw/supercam_libs_moc.csv",
     "bytes": 1998652,
     "sha256": "fea407d53b7aaaeba44142e8a12c24a631b91dc733d166b175b922b5e1ddbcc2",
-    "retrieved_at_utc": "2026-11-16T15:26:03+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:32+00:00",
+    "http_last_modified": "Tue, 21 Jul 2026 19:50:59 GMT",
+    "http_etag": "\"7e5cc404a19dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:32+00:00"
   },
   {
     "id": "supercam_moc_label",
@@ -13,7 +16,10 @@
     "file": "raw/supercam_libs_moc.xml",
     "bytes": 14764,
     "sha256": "2ec4433e1f382be3d355442b68ae5209df8f5fffc75552c4f6d7cda5414d1966",
-    "retrieved_at_utc": "2026-11-16T15:26:05+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:33+00:00",
+    "http_last_modified": "Tue, 21 Jul 2026 19:50:59 GMT",
+    "http_etag": "\"1e20cb404a19dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:33+00:00",
     "version": "16.0",
     "logical_identifier": "urn:nasa:pds:mars2020_supercam:data_derived_spectra:supercam_libs_moc"
   },
@@ -23,7 +29,10 @@
     "file": "raw/m2020_scam_masterlist.csv",
     "bytes": 32739166,
     "sha256": "e8b92dff90e18d008955c63911e34b3993c31983ada4cf1ae74157fb334a6751",
-    "retrieved_at_utc": "2026-11-16T15:26:10+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:34+00:00",
+    "http_last_modified": "Tue, 21 Jul 2026 19:50:59 GMT",
+    "http_etag": "\"7c81ca404a19dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:34+00:00"
   },
   {
     "id": "supercam_masterlist_label",
@@ -31,7 +40,10 @@
     "file": "raw/m2020_scam_masterlist.xml",
     "bytes": 27903,
     "sha256": "3c55767c616115482b29f33a2c05a035d3c0e09064f14ec0f046482cfdf084ac",
-    "retrieved_at_utc": "2026-11-16T15:26:13+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:34+00:00",
+    "http_last_modified": "Tue, 21 Jul 2026 19:50:59 GMT",
+    "http_etag": "\"e67cab404a19dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:34+00:00",
     "version": "16.0",
     "logical_identifier": "urn:nasa:pds:mars2020_supercam:data_observation_log:m2020_scam_masterlist"
   },
@@ -41,7 +53,10 @@
     "file": "raw/best_interp.csv",
     "bytes": 8684070,
     "sha256": "58fbc62f2676195a00b40b2da53a797a70284a8d2344b288c999d325b7ccb4cc",
-    "retrieved_at_utc": "2026-11-16T15:27:20+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:35+00:00",
+    "http_last_modified": "Thu, 30 Jul 2026 23:55:30 GMT",
+    "http_etag": "\"085bbe67e20dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:35+00:00"
   },
   {
     "id": "places_best_interp_label",
@@ -49,7 +64,10 @@
     "file": "raw/best_interp.csv.xml",
     "bytes": 15890,
     "sha256": "03a382042c73d7a7eaced1c32f64108ed42c07f2139bbcc815cb4ab882eac70b",
-    "retrieved_at_utc": "2026-11-16T15:27:19+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:35+00:00",
+    "http_last_modified": "Thu, 30 Jul 2026 23:55:31 GMT",
+    "http_etag": "\"801b54e77e20dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:35+00:00",
     "version": "16.0",
     "logical_identifier": "urn:nasa:pds:mars2020_rover_places:data_localizations:best_interp.csv"
   },
@@ -59,7 +77,10 @@
     "file": "raw/best_tactical.csv",
     "bytes": 171404,
     "sha256": "9da19e4f70287fe0d33ba716ff2169c10447c30c7a048583f730e4155226cde9",
-    "retrieved_at_utc": "2026-11-16T15:27:19+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:36+00:00",
+    "http_last_modified": "Thu, 30 Jul 2026 23:55:32 GMT",
+    "http_etag": "\"0b2ece77e20dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:36+00:00"
   },
   {
     "id": "places_best_tactical_label",
@@ -67,7 +88,10 @@
     "file": "raw/best_tactical.csv.xml",
     "bytes": 15898,
     "sha256": "777074bc03a3f06be8241b85cd4448cbdac5bff4dfecc443de6757152d22ac79",
-    "retrieved_at_utc": "2026-11-16T15:27:19+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:36+00:00",
+    "http_last_modified": "Thu, 30 Jul 2026 23:55:32 GMT",
+    "http_etag": "\"0b2ece77e20dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:36+00:00",
     "version": "16.0",
     "logical_identifier": "urn:nasa:pds:mars2020_rover_places:data_localizations:best_tactical.csv"
   },
@@ -77,7 +101,10 @@
     "file": "raw/telemetry.csv",
     "bytes": 16105886,
     "sha256": "8ac01f021f584273a6ce5025b53e79b53c8e9ea128523eb58a2576dececf84ca",
-    "retrieved_at_utc": "2026-11-16T15:29:48+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:37+00:00",
+    "http_last_modified": "Thu, 30 Jul 2026 23:55:34 GMT",
+    "http_etag": "\"0df1de97e20dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:37+00:00"
   },
   {
     "id": "places_telemetry_label",
@@ -85,7 +112,10 @@
     "file": "raw/telemetry.csv.xml",
     "bytes": 15880,
     "sha256": "f73ed4f2782613a6a3ffba2b6f3140c6897f371caa49264a26b4864c0e96b527",
-    "retrieved_at_utc": "2026-11-16T15:29:47+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:37+00:00",
+    "http_last_modified": "Thu, 30 Jul 2026 23:55:34 GMT",
+    "http_etag": "\"0df1de97e20dd1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:37+00:00",
     "version": "16.0",
     "logical_identifier": "urn:nasa:pds:mars2020_rover_places:data_localizations:telemetry.csv"
   },
@@ -95,7 +125,10 @@
     "file": "raw/ascam_sol0015_scam15218_mos_fr08_aft_rgb_l___tselhchee____________p02.png",
     "bytes": 8907637,
     "sha256": "3ea837f1a2b31cae18517556291108999cd8fba7aab0196fa3cfed9704d8f27d",
-    "retrieved_at_utc": "2026-11-16T15:27:22+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:40+00:00",
+    "http_last_modified": "Wed, 21 Jun 2023 22:04:11 GMT",
+    "http_etag": "\"dcf05e4f8ca4d91:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:40+00:00"
   },
   {
     "id": "supercam-rmi-tselhchee-0015-label",
@@ -103,7 +136,10 @@
     "file": "raw/ascam_sol0015_scam15218_mos_fr08_aft_rgb_l___tselhchee____________p02.xml",
     "bytes": 3468,
     "sha256": "f4c1db207e50bad68b733846a2c2e0c0381b6745bb436460ed74aeb75d1c8807",
-    "retrieved_at_utc": "2026-11-16T15:27:19+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:40+00:00",
+    "http_last_modified": "Wed, 21 Jun 2023 22:04:11 GMT",
+    "http_etag": "\"186a594f8ca4d91:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:40+00:00",
     "version": "2.0",
     "logical_identifier": "urn:nasa:pds:mars2020_supercam:data_special_rmi:ascam_sol0015_scam15218_mos_fr08_aft_rgb_l___tselhchee____________p"
   },
@@ -113,7 +149,10 @@
     "file": "raw/ascam_sol0028_scam01028_mos_fr08_aft_rgb_lri_iina_________________p01.png",
     "bytes": 8265487,
     "sha256": "c81bcb2b0fcaa55ab49f80b1eeb14263d15dd9ca1a7a15aa90fef39a7f13e48d",
-    "retrieved_at_utc": "2026-11-16T15:30:35+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:42+00:00",
+    "http_last_modified": "Wed, 02 Mar 2022 03:19:29 GMT",
+    "http_etag": "\"14b3da53e42dd81:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:42+00:00"
   },
   {
     "id": "supercam-rmi-iina-0028-label",
@@ -121,7 +160,10 @@
     "file": "raw/ascam_sol0028_scam01028_mos_fr08_aft_rgb_lri_iina_________________p01.xml",
     "bytes": 3215,
     "sha256": "f08c302782e1df19e065962bc67457b9d72bd910214840f484351d5f0690b820",
-    "retrieved_at_utc": "2026-11-16T15:30:35+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:42+00:00",
+    "http_last_modified": "Wed, 02 Mar 2022 03:19:29 GMT",
+    "http_etag": "\"cec1e953e42dd81:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:42+00:00",
     "version": "2.0",
     "logical_identifier": "urn:nasa:pds:mars2020_supercam:data_special_rmi:ascam_sol0028_scam01028_mos_fr08_aft_rgb_lri_iina_________________p"
   },
@@ -131,7 +173,10 @@
     "file": "raw/ascam_sol0012_scam15210_mos_fr08_aft_rgb_l_______________________p01.png",
     "bytes": 4689068,
     "sha256": "0da8fdc508e79cd661565e6beedd22176a18044971e522db99ee15f21323bfd9",
-    "retrieved_at_utc": "2026-11-16T15:27:22+00:00"
+    "retrieved_at_utc": "2026-11-26T14:02:44+00:00",
+    "http_last_modified": "Sun, 01 Aug 2021 20:54:31 GMT",
+    "http_etag": "\"178406d1787d71:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:44+00:00"
   },
   {
     "id": "supercam-rmi-maaz-0012-label",
@@ -139,7 +184,10 @@
     "file": "raw/ascam_sol0012_scam15210_mos_fr08_aft_rgb_l_______________________p01.xml",
     "bytes": 2804,
     "sha256": "0e2692046af7b8fe12f988d6f5d7f25f2c799861fcdc3180768476707d9b8799",
-    "retrieved_at_utc": "2026-11-16T15:27:19+00:00",
+    "retrieved_at_utc": "2026-11-26T14:02:44+00:00",
+    "http_last_modified": "Fri, 14 Nov 2025 07:15:35 GMT",
+    "http_etag": "\"6830e9783655dc1:0\"",
+    "last_checked_at_utc": "2026-11-26T14:02:44+00:00",
     "version": "1.2",
     "logical_identifier": "urn:nasa:pds:mars2020_supercam:data_special_rmi:ascam_sol0012_scam15210_mos_fr08_aft_rgb_l_______________________p"
   }

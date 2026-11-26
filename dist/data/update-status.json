@@ -1,26 +1,25 @@
 {
-  "last_checked_at_utc": "2026-11-16T17:43:03+00:00",
-  "last_data_update_at_utc": "2026-11-16T17:22:28.064Z",
-  "last_result": "prepared",
-  "message": "The standalone GitHub updater passed local verification. Repository upload and GitHub workflow activation are pending.",
+  "last_checked_at_utc": "2026-11-26T14:02:19+00:00",
+  "last_data_update_at_utc": "2026-11-26T14:03:05+00:00",
+  "last_result": "updated",
+  "message": "New public archive data passed validation.",
   "source_errors": [],
   "review_required": [],
   "check_summary": {
-    "unchanged": 109,
-    "changed": 0,
+    "unchanged": 108,
+    "changed": 1,
     "new": 0,
     "initialized": 0,
     "error": 0
   },
   "schedule": {
-    "is_enabled": false,
+    "is_enabled": true,
     "local_time": "08:00",
-    "timezone": "America/Toronto",
-    "activation_status": "pending_repository_upload"
+    "timezone": "America/Toronto"
   },
   "schema_version": "1.0",
   "backend": "github-actions",
-  "last_finished_at_utc": "2026-11-16T17:43:03+00:00",
+  "last_finished_at_utc": "2026-11-26T14:03:05+00:00",
   "setup_verification": {
     "source_checks": 109,
     "outcome": "unchanged",

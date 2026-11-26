@@ -10,9 +10,9 @@
     "rmi_images": 10,
     "rmi_matched_spots": 78,
     "rmi_unmatched_spots": 0,
-    "traverse_points": 1389,
+    "traverse_points": 1391,
     "traverse_chunk_sha256": {
-      "data/chemcam/traverse-001.json": "5d7321b5c60b4940f88311a436252f945fa16013d40fa2c7bff61744188cc8c8"
+      "data/chemcam/traverse-001.json": "773eeb6508e98c5c84d83ef0f629bd68042a80984d0825deb0e251aae74ac71e"
     },
     "checks": "passed"
   },

@@ -2,17 +2,17 @@
   "schema_version": "1.0",
   "sources": {
     "chemcam:MSL_waypoints.json": {
-      "bytes": 665124,
-      "content_length": "665124",
-      "content_type": "application/json",
-      "etag": "\"0814c64e1508c7c799002e7f319876a0\"",
-      "fingerprint": "5a32324f4b8ba22ebdfac50a503e195f47ccdc876ad4c15b19e29dc7cef15a09",
-      "group": "chemcam",
+      "url": "https://mars.nasa.gov/mmgis-maps/MSL/Layers/json/MSL_waypoints.json",
       "kind": "sha256",
-      "last_modified": "Fri, 13 Nov 2026 19:13:22 GMT",
+      "group": "chemcam",
+      "etag": "\"0dcf1a2f0d3eb2a38bc8869cf934eb78\"",
+      "last_modified": "Mon, 23 Nov 2026 16:30:18 GMT",
+      "content_type": "application/json",
+      "content_length": "666078",
       "resolved_url": "https://mars.nasa.gov/mmgis-maps/MSL/Layers/json/MSL_waypoints.json",
-      "sha256": "5a32324f4b8ba22ebdfac50a503e195f47ccdc876ad4c15b19e29dc7cef15a09",
-      "url": "https://mars.nasa.gov/mmgis-maps/MSL/Layers/json/MSL_waypoints.json"
+      "fingerprint": "b8ffcac79508d2770de5a8d72dd82bf4745956624fb3b2549f6ad7b0aea91ce4",
+      "sha256": "b8ffcac79508d2770de5a8d72dd82bf4745956624fb3b2549f6ad7b0aea91ce4",
+      "bytes": 666078
     },
     "chemcam:moc_0000_0089.csv": {
       "bytes": 81895,
@@ -1267,7 +1267,7 @@
       "content_length": "6954",
       "resolved_url": "https://zenodo.org/api/records/7041712",
       "fingerprint": "528edab667009c8651e64a82700778ad2f5250de5c4358c8093a7ef965929303",
-      "sha256": "7db988b8d65f8d2ae2ceb68a6f77c2f5ad037655d085ff0ed8ce320f4e718032",
+      "sha256": "bafe2d55a2f5f8e3965df1dcdfd45d5ceeb1a33bbe5ec6f3e2255aeae0524f0d",
       "bytes": 6954,
       "value": {
         "id": "7041712",
@@ -2274,7 +2274,7 @@
       "content_length": "6839",
       "resolved_url": "https://zenodo.org/api/records/8402478",
       "fingerprint": "9ba624c60c8ecdb60a46b4ffead59c4cdd3cdaee078489fecf4a50ae6b7851cd",
-      "sha256": "e74d49ee4cc9d58a26cb7cd3bd0698c4e4f49cd608bef70e47bef7ed657650a6",
+      "sha256": "f088c1958286a7cf7e21a7473f256bacb231c201dfeaebced71762e76b779764",
       "bytes": 6839,
       "value": {
         "id": "8402478",
@@ -2306,7 +2306,7 @@
       "content_length": "4687",
       "resolved_url": "https://zenodo.org/api/records/13341513",
       "fingerprint": "2c04c1e259715ff6f4b4bf1140b17ec9a2a506f779b78c7f37a18a7c41ee79f7",
-      "sha256": "d89c81ce5dcdf718963047513b75d6e36e7d10191259c026bf0992a113a74acd",
+      "sha256": "9119e3066371c147ea6618c4e768850396a11062215a29f348b85b1c52884d1e",
       "bytes": 4687,
       "value": {
         "id": "13341513",
@@ -2355,7 +2355,7 @@
       "content_length": "6511",
       "resolved_url": "https://zenodo.org/api/records/11480713",
       "fingerprint": "3c834742efe96612508fe23426a49f039daf68c2fbff01679532a882dbee6f78",
-      "sha256": "34908b3575aba1bee5e367287c10dff92b5b82842aea0554d222fd36c5fedbe7",
+      "sha256": "1b36b7b28de9b7671138eb1ebb01097e9602e3889ce1fee2b90683cdb0bb87a8",
       "bytes": 6511,
       "value": {
         "id": "11480713",

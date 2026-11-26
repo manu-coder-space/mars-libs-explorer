@@ -1,0 +1,44 @@
+CHEMCAM INGEST FINDINGS
+
+{
+  "point_count": 31175,
+  "science_point_count": 30797,
+  "calibration_point_count": 378,
+  "min_sol": 13,
+  "max_sol": 4843,
+  "target_count": 4341,
+  "geolocated_science_point_count": 30722,
+  "geolocated_science_location_count": 1182,
+  "unlocated_science_point_count": 75,
+  "rmi_target_count": 10,
+  "rmi_point_count": 78,
+  "moc_file_count": 42,
+  "log_row_count": 123514,
+  "quality_flag_counts": {
+    "archive_saturation_note": 1423,
+    "rover_waypoint_exact_join_missing": 76,
+    "onboard_calibration_target": 378,
+    "archive_heterogeneity_note": 768,
+    "target_distance_above_3p5_m_review_distance_bias": 3399,
+    "outside_testset_minmax": 2053,
+    "oxide_total_outside_80_to_120_review": 1587,
+    "archive_ignore_note": 30,
+    "archive_continuum_note": 2
+  }
+}
+
+- Abundances are original archived MOC predictions in oxide wt%; no normalization to 100% has been applied.
+- FeOT means total iron reported as FeO equivalent; it does not measure iron oxidation state.
+- RMSEP estimates prediction error from calibration testing; shot SD describes shot-to-shot variability. Neither is silently interpreted as a 95% confidence interval.
+- Geographic markers are rover waypoint proxies joined by exact site and drive. The actual laser spot can be meters away. No target latitude/longitude was reconstructed.
+- Unmatched site/drive locations remain null and are still available in chemistry and sol views.
+- NASA MMGIS latitude convention is unspecified in the downloaded GeoJSON. Raw geographic coordinates are preserved.
+- Map traverse and chemistry have different release cutoffs. The route may extend beyond the latest archived chemistry.
+- Onboard calibration targets are flagged using explicit Calibration Target/Cal Target/CCCT terms in observation-log metadata; default science views should exclude these points.
+- Point numbers outside the curated RMI subset are chronological order within sequence and target, not guaranteed official raster numbers.
+- RMI annotations are original NASA PDS mosaic pixel coordinates, linked to chemistry by spacecraft clock. Unsampled image areas have no measured LIBS composition.
+- Range above 3.5 m, testset limits and oxide totals are review flags, not automatic invalidation criteria. Archived quality notes remain available.
+- Zeros and negative predictions are retained. No missing value or detection limit is replaced with a measured concentration.
+
+Run: python fetch_sources.py; python ingest_chemcam.py
+All source files are cached in raw/ with adjacent SHA256 source metadata.

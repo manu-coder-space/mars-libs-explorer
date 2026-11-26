@@ -547,7 +547,7 @@
       "is_calibration": false
     }
   ],
-  "output_sha256": "c5179490b2ead6f32daa30045f17d72a67fa4b447cc8ddb38b1fb0c196c9cdec",
+  "output_sha256": "6f54b54043ef68c5d2e643762c7b3f9e072eaf8af5d6b90c8d1fb28243249ae9",
   "output_bytes": 664788,
   "all_finite_coordinates": true
 }

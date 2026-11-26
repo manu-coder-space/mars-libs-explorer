@@ -25,7 +25,7 @@
       "archive_continuum_note": 2
     }
   },
-  "source_file_count": 112,
+  "source_file_count": 111,
   "source_bytes_sha256_verified": true,
   "moc_row_counts_match_labels": true,
   "duplicate_product_ids": 0,
@@ -33,7 +33,7 @@
   "ambiguous_waypoint_keys": [],
   "download_failures": [],
   "rmi_failures": [],
-  "json_bytes": 55158884,
+  "json_bytes": 55159127,
   "moc_file_reports": [
     {
       "file": "moc_0000_0089.csv",
