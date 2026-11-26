@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/update-data.yml'
+      - 'README.md'
+      - 'SCHEDULED_UPDATES.md'
+      - 'dist/docs/**'
       - 'mars-part-01.zip'
       - 'mars-part-02.zip'
       - 'mars-part-03.zip'
