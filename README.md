@@ -1,5 +1,10 @@
 # Mars LIBS Explorer
 
+## Mar-to-gis geological workspace
+
+Open **[Mar-to-gis](https://manu-coder-space.github.io/mars-libs-explorer/Mar-to-gis/)** for published geological units, contacts and structural landforms overlaid with rover chemistry and spectroscopy. Area selection, Mars distances, unit summaries, chemical plots, mapped-orientation roses and portable workspace exports are included. Read [MAR_TO_GIS.md](MAR_TO_GIS.md) for sources and scientific limits.
+
+
 An interactive field guide to the measured chemistry of Mars. Explore
 NASA PDS ChemCam and SuperCam major-oxide predictions over real orbital imagery,
 published geological maps, and selected Remote Micro-Imager (RMI) mosaics.

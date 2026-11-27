@@ -8,6 +8,13 @@ on:
       - 'README.md'
       - 'SCHEDULED_UPDATES.md'
       - 'dist/docs/**'
+      - 'dist/Mar-to-gis/**'
+      - 'dist/index.html'
+      - 'dist/mars-libs.html'
+      - 'scripts/check_gis.cjs'
+      - 'scripts/check_gis_sources.py'
+      - 'scripts/build_gis_layers.py'
+      - 'MAR_TO_GIS.md'
       - 'mars-part-01.zip'
       - 'mars-part-02.zip'
       - 'mars-part-03.zip'
@@ -246,6 +253,10 @@ jobs:
         run: |
           python scripts/validate_bundle.py
           node scripts/check_chemistry.cjs
+          node scripts/check_gis.cjs
+          python scripts/check_gis_sources.py
+          node --check dist/Mar-to-gis/gis.js
+          node --check dist/Mar-to-gis/map.js
           python scripts/validate_context.py
       - name: Save the checked data and status
         id: commit

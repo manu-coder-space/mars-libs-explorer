@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14232b">
+<title>Mar-to-gis · Mars geological workbench</title>
+<meta name="description" content="Explore published Mars geology, mapped structures, rover LIBS chemistry and spectroscopic evidence in a source-linked GIS workspace.">
+<link rel="stylesheet" href="./gis.css">
+<script defer src="./analysis.js"></script><script defer src="./map.js"></script><script defer src="./gis.js"></script>
+</head>
+<body>
+<a class="skip" href="#map-section">Skip to map</a>
+<header class="app-header">
+ <a class="brand" href="./" aria-label="Mar-to-gis home"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 23c8-7 18-10 29-9M9 30c8-6 16-8 23-8M12 10c3 6 6 14 7 24" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="28" cy="12" r="3" fill="#e8a06a"/></svg><span>Mar-to-gis<small>MARS GEOLOGICAL WORKBENCH</small></span></a>
+ <nav aria-label="Project"><button id="sources-open" class="quiet">Sources & methods</button><a href="../" class="quiet">LIBS Explorer</a><button id="save-session" class="primary">Save workspace</button></nav>
+</header>
+<main>
+ <section class="context-bar" aria-label="Region">
+  <div><p class="eyebrow">ORBITAL CONTEXT / SURFACE EVIDENCE</p><h1>Put the measurements in context.</h1></div>
+  <div class="mission-tabs" role="group" aria-label="Mission region"><button data-mission="supercam" class="active" aria-pressed="true"><strong>Jezero</strong><span>Perseverance</span></button><button data-mission="chemcam" aria-pressed="false"><strong>Gale</strong><span>Curiosity</span></button><button data-mission="zhurong" aria-pressed="false"><strong>Utopia</strong><span>Zhurong</span></button></div>
+ </section>
+ <div id="load-status" class="load-status" role="status" aria-live="polite">Loading the published maps and archive…</div>
+ <div id="error" class="error" role="alert" hidden></div>
+ <div class="workspace-grid">
+  <aside class="layers-panel panel" aria-label="Layers and filters">
+   <details open id="layers-details"><summary><span>Layers & filters</span><span class="pill">GIS</span></summary>
+   <div class="section-pad">
+    <label class="field-label" for="basemap">Orbital basemap</label><select id="basemap"></select><p id="basemap-note" class="fine"></p>
+   </div>
+   <section class="section-pad layer-section"><h2>Published geology</h2>
+    <label class="check"><input id="show-geology" type="checkbox" checked><span>Geological units</span><i class="swatch" style="--swatch:#b5c187"></i></label>
+    <label class="range-label" for="geology-opacity">Map opacity <output id="opacity-value">45%</output></label><input id="geology-opacity" type="range" min="0" max="100" value="45">
+    <label class="check"><input id="show-contacts" type="checkbox" checked><span>Published contacts</span><i class="line-swatch"></i></label>
+    <label class="check"><input id="show-structures" type="checkbox" checked><span>Structures & landforms</span><i class="line-swatch gold"></i></label>
+    <label class="field-label" for="structure-kind">Mapped feature type</label><select id="structure-kind"><option value="">All mapped types</option></select>
+    <p id="geology-note" class="fine"></p><div id="unit-legend" class="unit-legend"></div>
+   </section>
+   <section class="section-pad layer-section"><h2>Rover observations</h2>
+    <label class="check"><input id="show-traverse" type="checkbox" checked><span>Rover traverse</span><i class="line-swatch cyan"></i></label>
+    <label class="check"><input id="show-points" type="checkbox" checked><span>LIBS measurements</span><i class="dot-swatch"></i></label>
+    <label class="field-label" for="metric">Colour by composition</label><select id="metric"></select><p id="metric-note" class="fine"></p>
+    <label class="check"><input id="show-evidence" type="checkbox" checked><span>Minerals & organic evidence</span><i class="diamond"></i></label>
+    <label class="check"><input id="show-acquisitions" type="checkbox"><span>Raman acquisitions</span><i class="ring"></i></label>
+    <div class="evidence-key"><span><b class="key-mineral">◆</b> Mineral</span><span><b class="key-organic">◆</b> Organic detection</span><span><b class="key-candidate">◆</b> Interpretation</span><span><b class="key-unresolved">◆</b> Unresolved signal</span></div>
+   </section>
+   <section class="section-pad layer-section" id="chemistry-filters"><h2>Filter measurements</h2>
+    <label class="field-label" for="search">Target or observation ID</label><input id="search" type="search" placeholder="e.g. Maaz, Garde…" autocomplete="off">
+    <div class="field-pair"><label>First sol<input id="sol-min" type="number" min="0"></label><label>Last sol<input id="sol-max" type="number" min="0"></label></div>
+    <label class="field-label" for="unit-filter">Unit under the rover position</label><select id="unit-filter"><option value="">All units</option></select>
+    <label class="check"><input id="exclude-flagged" type="checkbox"><span>Exclude archive quality flags</span></label>
+    <button id="reset-filters" class="text-button">Reset filters</button>
+   </section>
+   <section class="section-pad layer-section"><h2>Your interpretation</h2>
+    <label class="file-button">Import Mars vector layer<input id="import-layer" type="file" accept=".json,.geojson"></label>
+    <label class="check"><input id="confirm-mars" type="checkbox"><span>My file uses Mars longitude and latitude in degrees.</span></label>
+    <p class="fine">Points, lines or polygons. Earth projections are not reprojected. Imported layers stay in this browser.</p><div id="custom-layers"></div>
+    <label class="file-button">Restore workspace<input id="restore-session" type="file" accept=".json"></label>
+   </section>
+   </details>
+  </aside>
+  <section id="map-section" class="map-section panel" aria-label="Interactive geological map">
+   <div class="map-toolbar"><div class="tool-group" role="group" aria-label="Map tools"><button data-mode="inspect" class="active" aria-pressed="true">Inspect</button><button data-mode="select" aria-pressed="false">Select area</button><button data-mode="measure" aria-pressed="false">Measure</button></div><div class="tool-group"><button id="fit-rover">Rover extent</button><button id="fit-geology">Map extent</button><button id="clear-selection" title="Clear selected area and measurements">Clear</button></div></div>
+   <div class="map-wrap"><canvas id="map" tabindex="0" aria-label="Mars geology and rover positions. Drag to pan, scroll or pinch to zoom. Use plus, minus and arrow keys for keyboard navigation. Select measurements from the table below for accessible inspection."></canvas><div class="map-caption"><span id="map-region">Jezero crater</span><span id="map-tag">Mars · East longitude</span></div><div id="map-loading" class="map-loading">Preparing the map…</div><div class="map-zoom"><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button></div></div>
+   <div class="map-readout"><span id="tool-help">Select a marker or geological unit. Drag to pan; scroll or pinch to zoom.</span><span id="measure-readout"></span></div>
+   <div class="map-legend"><div><span id="colour-label">SiO₂ · wt%</span><div class="colour-ramp"></div><span class="range-values"><span id="colour-min">—</span><span id="colour-max">—</span></span></div><p id="map-explanation">Markers aggregate measurements at rover positions; their colour is the median. Geological colours belong to the published map.</p></div>
+   <div id="attribution" class="attribution"></div>
+  </section>
+  <aside class="inspector panel" aria-label="Feature inspector"><div class="panel-heading"><h2>Feature inspector</h2><span id="inspector-type" class="pill">SELECT</span></div><div id="inspector-content" class="section-pad"><div class="empty-icon">⌖</div><h3>Read a place on Mars</h3><p>Choose a rover marker, a published contact, or a geological unit to see its source and the observations nearby.</p><p class="fine">An orbital unit beneath a rover position is spatial context. The sampled laser target may be elsewhere.</p></div></aside>
+  <section class="analysis-panel panel" aria-label="Selected observations and interpretation tools">
+   <div class="analysis-head"><div><p class="eyebrow">LINKED OBSERVATIONS</p><h2 id="selection-title">Measurements in the workspace</h2></div><div class="export-actions"><button id="export-csv">Export CSV</button><button id="export-geojson">Export Mars vectors</button><button id="export-map">Export map</button></div></div>
+   <div class="stats"><div><strong id="stat-points">—</strong><span>selected LIBS records</span></div><div><strong id="stat-locations">—</strong><span>rover positions</span></div><div><strong id="stat-median">—</strong><span id="stat-metric">median SiO₂ (wt%)</span></div><div><strong id="stat-evidence">—</strong><span>selected evidence records</span></div></div>
+   <p id="selection-note" class="selection-note"></p>
+   <div class="analysis-tabs" role="tablist" aria-label="Analysis views"><button role="tab" id="tab-records" data-tab="records" aria-selected="true" aria-controls="pane-records">Observations</button><button role="tab" id="tab-compare" data-tab="compare" aria-selected="false" aria-controls="pane-compare">Compare units</button><button role="tab" id="tab-chemistry" data-tab="chemistry" aria-selected="false" aria-controls="pane-chemistry">Chemical relationships</button><button role="tab" id="tab-structure" data-tab="structure" aria-selected="false" aria-controls="pane-structure">Mapped orientations</button><button role="tab" id="tab-notes" data-tab="notes" aria-selected="false" aria-controls="pane-notes">Notes & provenance</button></div>
+   <div id="pane-records" class="tab-pane" role="tabpanel" aria-labelledby="tab-records"><div class="table-wrap"><table><caption class="sr-only">Filtered Mars observations; select a target to inspect</caption><thead><tr><th>Target / observation</th><th>Sol</th><th id="value-heading">SiO₂ (wt%)</th><th>Unit at rover</th><th>Quality flags</th></tr></thead><tbody id="records"></tbody></table></div><div class="pagination"><span id="page-note"></span><div><button id="page-prev">Previous</button><button id="page-next">Next</button></div></div></div>
+   <div id="pane-compare" class="tab-pane" role="tabpanel" aria-labelledby="tab-compare" hidden><p class="context-note">Descriptive summaries group measurements by the published map unit beneath the rover-position proxy. Repeat shots and targets are not independent geological samples. No mineral abundance is inferred.</p><div class="table-wrap"><table><thead><tr><th>Published unit</th><th>Records</th><th>Positions</th><th>Median</th><th>25–75% interval</th></tr></thead><tbody id="unit-comparison"></tbody></table></div></div>
+   <div id="pane-chemistry" class="tab-pane" role="tabpanel" aria-labelledby="tab-chemistry" hidden><div class="chart-grid"><section><div class="chart-title"><h3>Oxide relationships</h3><label>X <select id="scatter-x"></select></label><label>Y <select id="scatter-y"></select></label></div><canvas id="scatter" aria-label="Scatter plot of selected oxide measurements"></canvas><p id="scatter-note" class="fine"></p></section><section><h3>Cation proportions</h3><canvas id="ternary" aria-label="Ternary plot of Si plus Al, Ca plus Na plus K, and Fe plus Mg cation proportions"></canvas><p id="ternary-note" class="fine"></p></section></div><p class="context-note">Ratios use archived oxide estimates without renormalizing the measurements. FeOₜ is total iron expressed as FeO. Cation proportions are exploratory descriptors; mixtures and alteration can produce similar positions. They do not identify a unique mineral.</p></div>
+   <div id="pane-structure" class="tab-pane" role="tabpanel" aria-labelledby="tab-structure" hidden><div class="rose-layout"><canvas id="rose" aria-label="Length-weighted axial orientation rose of mapped lines"></canvas><div><h3>Orientation of published traces</h3><p id="rose-note"></p><p class="fine">Axial bearings are measured clockwise from north, from 0° to 180°. Segment length provides the weight. The result describes the displayed map traces; it is not a stress inversion or a measurement of subsurface fault orientation.</p><p class="fine">Use “Mapped feature type” to examine lineaments, ridge crests, channels or crater rims separately. Contacts are excluded.</p></div></div></div>
+   <div id="pane-notes" class="tab-pane" role="tabpanel" aria-labelledby="tab-notes" hidden><div class="notes-grid"><div><label class="field-label" for="workspace-notes">Your geological interpretation</label><textarea id="workspace-notes" rows="7" placeholder="Record your observation, hypothesis, alternative explanation, and source…"></textarea><p class="fine">Notes and imported layers are saved locally in this browser. Save workspace downloads a portable JSON file.</p></div><div><h3>Data and coordinate provenance</h3><div id="provenance"></div><button id="export-crs">Download Mars CRS (.prj)</button><p class="fine">Mars vector exports use GeoJSON geometry with explicit planetary metadata. Assign the supplied Mars CRS in desktop GIS; do not assume Earth WGS 84. ChemCam’s original latitude convention remains unspecified by its source.</p></div></div></div>
+  </section>
+ </div>
+ <footer><p><strong>Mar-to-gis</strong> · Published maps, measured chemistry, traceable interpretations.</p><p id="update-status">Reading archive update status…</p><p class="fine">Geology and evidence layers retain their publication and review dates. Automated archive checks do not validate new geological interpretations.</p></footer>
+</main>
+<dialog id="sources-dialog" aria-labelledby="sources-title"><div class="dialog-head"><div><p class="eyebrow">PROVENANCE & LIMITATIONS</p><h2 id="sources-title">Every layer has a source.</h2></div><button id="sources-close" aria-label="Close sources">Close</button></div><div id="sources-content"></div></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<noscript>This GIS workspace requires JavaScript. The source data and documentation remain available in the <a href="https://github.com/manu-coder-space/mars-libs-explorer">project repository</a>.</noscript>
+</body></html>

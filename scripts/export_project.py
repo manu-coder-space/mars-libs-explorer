@@ -26,7 +26,7 @@ def main():
             if file.suffix == ".pyc" or file.name in {"data.json", "data.json.gz"}:
                 continue
             selected.append(file)
-    for name in ["README.md", "DATA_SOURCES.md", "LICENSE", "requirements.txt", ".gitignore", "VALIDATION.json", "CONTEXT_VALIDATION.json", "QA.md", "SCHEDULED_UPDATES.md", "PHONE_SETUP.md"]:
+    for name in ["README.md", "DATA_SOURCES.md", "LICENSE", "requirements.txt", ".gitignore", "VALIDATION.json", "CONTEXT_VALIDATION.json", "QA.md", "SCHEDULED_UPDATES.md", "PHONE_SETUP.md", "MAR_TO_GIS.md"]:
         path = ROOT / name
         if path.exists():
             selected.append(path)
@@ -53,7 +53,7 @@ def main():
         if bad:
             raise ValueError(f"Archive integrity failure: {bad}")
         names = set(archive.namelist())
-        for required in ["dist/index.html", "dist/app.js", "dist/styles.css", ".github/workflows/pages.yml", "README.md"]:
+        for required in ["dist/index.html", "dist/app.js", "dist/styles.css", ".github/workflows/update-data.yml", "README.md"]:
             if "mars-libs-explorer/" + required not in names:
                 raise ValueError(f"Missing {required}")
     content = output.read_bytes()
