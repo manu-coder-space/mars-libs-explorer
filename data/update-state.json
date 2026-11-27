@@ -2303,11 +2303,11 @@
       "group": "geography",
       "etag": "\"4\"",
       "content_type": "application/json",
-      "content_length": "4687",
+      "content_length": "4689",
       "resolved_url": "https://zenodo.org/api/records/13341513",
       "fingerprint": "2c04c1e259715ff6f4b4bf1140b17ec9a2a506f779b78c7f37a18a7c41ee79f7",
-      "sha256": "9119e3066371c147ea6618c4e768850396a11062215a29f348b85b1c52884d1e",
-      "bytes": 4687,
+      "sha256": "c3d47184fe4c7c37918daf7a065c101d217ea52568096c2ca26cb97dddde9e49",
+      "bytes": 4689,
       "value": {
         "id": "13341513",
         "files": [
