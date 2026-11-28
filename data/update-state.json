@@ -1267,7 +1267,7 @@
       "content_length": "6954",
       "resolved_url": "https://zenodo.org/api/records/7041712",
       "fingerprint": "528edab667009c8651e64a82700778ad2f5250de5c4358c8093a7ef965929303",
-      "sha256": "bafe2d55a2f5f8e3965df1dcdfd45d5ceeb1a33bbe5ec6f3e2255aeae0524f0d",
+      "sha256": "04627a214e8be6ad30ce83bd3f7e6fa9aa3181eefcccd370f77b88c73a99fce3",
       "bytes": 6954,
       "value": {
         "id": "7041712",
@@ -2328,7 +2328,7 @@
       "content_length": "5142",
       "resolved_url": "https://zenodo.org/api/records/16809501",
       "fingerprint": "9d5ee707a17934b5dc93ff1310b8d9796f262d07ed258144263b6ec6c52148ba",
-      "sha256": "1f5fd52722b84d2df358bb33a686a066aa2f626242cbd144ee851d090d261074",
+      "sha256": "05165a139e2c76fb6c349ae19c4c48cdad7a3fc4ccf2c06ac4d3f5460c7494d8",
       "bytes": 5142,
       "value": {
         "id": "16809501",

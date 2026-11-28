@@ -1,5 +1,5 @@
 {
-  "last_checked_at_utc": "2026-11-27T14:14:35+00:00",
+  "last_checked_at_utc": "2026-11-28T13:56:03+00:00",
   "last_data_update_at_utc": "2026-11-26T14:03:05+00:00",
   "last_result": "unchanged",
   "message": "No new NASA data require ingestion.",
@@ -19,7 +19,7 @@
   },
   "schema_version": "1.0",
   "backend": "github-actions",
-  "last_finished_at_utc": "2026-11-27T14:14:35+00:00",
+  "last_finished_at_utc": "2026-11-28T13:56:03+00:00",
   "setup_verification": {
     "source_checks": 109,
     "outcome": "unchanged",
